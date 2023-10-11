@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Po-Glos</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link rel="stylesheet" href="stylesheets/gaurd.css"/>
+        <noscript>
+            <link rel="stylesheet" href="stylesheets/noscript.css"/>
+        </noscript>
+    </head>
+    <body class="is-preload">
+        <!--* Wrapper -->
+        <div id="wrapper">
+            <!--* Main -->
+            <div id="main">
+                <!--* Gaurd -->
+                <article id="gaurd">
+                    <h2 class="major">gaurd</h2>
+                    <!--? select_data 존재하는가?-->
+                    <% if (!select_data || (select_data.id === null && select_data.floor === null && select_data.name === null && select_data.date === null && select_data.time === null)) { %>
+                        <p class="my-box-font">Data is not available.</p>
+                    <% } else {%> 
+
+                        <!--? Query Inquire 화면-->
+                        <!--? select data info-->
+                        <div class="flex-container">
+                            <div class="my-box">
+                                <p class="my-box-font">
+                                    <strong style="color:black;">Name:</strong><%= select_data.name %>
+                                </p>
+                            </div>
+                            <div class="info-container">
+                                <p class="info-p">
+                                    <strong>floor: </strong><%= select_data.floor %>
+                                </p>
+                                <p class="info-p" style="width:7rem;">
+                                    <strong>date: </strong><%= select_data.date %>
+                                </p>
+                                <p class="info-p" style="width:8rem;">
+                                    <strong>time: </strong><%= select_data.time %>
+                                </p>
+                            </div>
+                        </div><br>
+                    <% } %>
+
+                    <!--? select data - picture-->
+                    <% if (fileArray && fileArray.length > 0) { %>
+                        <% for (let i = 0; i < fileArray.length; i += 4) { %>
+                            <div class="grade-container">
+                                <div id="right_grade_box">
+                                    <div class="grade-box">
+                                        <div class="flex-container">
+                                            <img id="<%= ImageDisplay[i] %>" src="<%= fileArray[i] %>">
+                                            <img id="<%= ImageDisplay[i+1] %>" src="<%= fileArray[i + 1] %>">
+                                        </div>
+                                    </div>
+                                    <div class="class_name" style="margin-top: 0.3rem;">
+                                        <h3 style="color: white; margin-bottom: 0rem;"><%= i / 4 + 1 %>학년 1반 </h3>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="right_grade_box">
+                                        <div class="grade-box">
+                                            <div class="flex-container">
+                                                <img id="<%= ImageDisplay[i+2] %>" src="<%= fileArray[i + 2] %>" >
+                                                <img id="<%= ImageDisplay[i+3] %>" src="<%= fileArray[i + 3] %>">
+                                            </div>
+                                        </div>
+                                        <div class="class_name" style="margin-top: 0.3rem;">
+                                            <h3 style="color: white; margin-bottom: 0rem;"><%= i / 4 + 1 %>학년 1반 </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                        <% } %>
+                    <% } else { %>
+                        <p class="my-box-font">No data found.</p>
+                    <% } %>
+                    <p id="select_id" style="display: none;">15</p>
+                    <script>
+                    function saveValue(condition) {
+                        let result;
+
+                        if (condition === 1) {
+                            result = 1011;
+                        } else if (condition === 2) {
+                            result = 1012;
+                        } else if (condition === 3) {
+                            result = 1021;
+                        } else if (condition === 4) {
+                            result = 1022;
+                        } else if (condition === 5) {
+                            result = 2011;
+                        } else if (condition === 6) {
+                            result = 2012;
+                        } else if (condition === 7) {
+                            result = 2021;
+                        } else if (condition === 8) {
+                            result = 2022;
+                        } else if (condition === 9) {
+                            result = 3011;
+                        } else if (condition === 10) {
+                            result = 3012;
+                        } else if (condition === 11) {
+                            result = 3021;
+                        } else if (condition === 12) {
+                            result = 3022;
+                        }
+
+                        return result;
+                    }
+                    function updateImage(index) {
+                    const imageElement = document.getElementById(`imageDisplay${index+1}`);
+                    const imageUrl = `/get-image/${index}`;
+                    
+                    // 이미지 요청을 보냅니다.
+                    fetch(imageUrl)
+                        .then(response => {
+                        if (response.status === 304) {
+                            // 304 상태 코드인 경우, 이미지를 다시 가져올 필요가 없으므로 아무 작업도 하지 않습니다.
+                            console.log('이미지가 변경되지 않았습니다. 이전 이미지를 사용합니다.');
+                        } else if (response.status === 200) {
+                            imageElement.src = imageUrl;
+                            console.log('이미지를 업데이트했습니다.');
+                        } else {
+                            // 다른 상태 코드인 경우, 오류 처리를 수행할 수 있습니다.
+                            console.error(`이미지 업데이트에 실패했습니다. 상태 코드: ${response.status}`);
+                        }
+                        })
+                        .catch(error => {
+                        console.error('이미지 업데이트 중 오류가 발생했습니다.', error);
+                        });
+                    }
+                        let currentIndex = 0;
+                
+                        // 초기 이미지 로드
+                        updateImage(currentIndex);
+                
+                        // 일정한 간격(예: 5초마다)으로 이미지 업데이트
+                        setInterval(() => {
+                            currentIndex =(currentIndex + 1)%12; // 이미지 개수에 맞게 수정
+                            updateImage(currentIndex);
+                            console.log("update");
+                        }, 500); // 5초마다 업데이트
+                    </script>
+                    <a href="http://glaisser.com:3000/#"><div class="close" >Close</div></a>
+                </article>
+        </div>
+        <!-- BG -->
+        <div id="bg"></div>
+        <!-- Scripts -->
+        <script src="javascripts/jquery.min.js"></script>
+        <script src="javascripts/browser.min.js"></script>
+        <script src="javascripts/breakpoints.min.js"></script>
+        <script src="javascripts/util.js"></script>
+        <script src="javascripts/gaurd.js"></script>
+    </body>
+</html>

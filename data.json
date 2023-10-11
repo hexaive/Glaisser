@@ -1,0 +1,18 @@
+{
+  "time": 0.08412041399969894,
+  "image": {
+    "width": 640,
+    "height": 480
+  },
+  "predictions": [
+    {
+      "x": 229.5,
+      "y": 288,
+      "width": 425,
+      "height": 384,
+      "confidence": 0.4910731315612793,
+      "class": "0",
+      "class_id": 0
+    }
+  ]
+}

@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GLAISeR</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link rel="stylesheet" href="stylesheets/main.css"/>
+        <noscript>
+            <link rel="stylesheet" href="stylesheets/noscript.css"/>
+        </noscript>
+    </head>
+    <body class="is-preload">
+        <!--* Wrapper -->
+        <div id="wrapper">
+            <!--* Header -->
+            <header id="header">
+
+                <!--? home logo-->
+                <!--TODO: 메이커창작과 로고로 변경-->
+                <div class="logo">
+                    <img id="robot_arm" src="images/logo2.png">
+                </div>
+                <!--? Title content-->
+                <div class="content">
+                    <div class="inner">
+                        <h1 style="font-size: 70px; color: #d2eae5;">GLAISeR</h1>
+                        <p>
+                            GLaDOS Artificial Inteligence Security Robot
+                            <br>&lt;Jacky&gt; X &lt;조윤혁 x 김강현 x 장한수 x 김선우 x 송승현&gt;
+                            <br>2023.8.24 ~ 2023.10.11
+                        </p>
+                    </div>
+                </div>
+                <!--? nav bar -->
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#intro">Intro</a>
+                        </li>
+                        <li>
+                            <a href="#gaurd_start">Gaurd</a>
+                        </li>
+                        <li>
+                            <a href="#query">Query</a>
+                        </li>
+                        <li>
+                            <a href="#maker">Maker</a>
+                        </li>
+                        <!--? element nav-->
+                        <!-- <li>
+                            <a href="#element">Elements</a>
+                        </li> -->
+                    </ul>
+                </nav>
+            </header>
+
+            <!--* Main -->
+            <div id="main">
+
+                <!--* Intro -->
+                <article id="intro">
+                    <h2 class="major">Intro</h2>
+                    <span class="image main">
+                        <img src="images/pic01.jpg" alt="" />
+                    </span>
+                    <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>. </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+                </article>
+
+
+                <!--* Gaurd_start -->
+                <article id="gaurd_start">
+                    <h2 class="major">Gaurd Start</h2>
+
+                    <!--? Gaurd start - Banner-->
+                    <span class="image main">
+                        <img src="images/gaurd_portal.jpg" alt=""/>
+                    </span>
+
+                    <!--? Gaurd Start - Post form -->
+                    <form method="POST" action="/gaurd_form">
+                        <div class="gaurd_form_container">
+                            <div> <!--? first line <div>-->
+                                <!--? Name form-->
+                                <label for="name" style="display: inline-block;">Name: </label>
+                                <input type="text" name="name" id="demo-name" value placeholder="Please write the query name!" style="display: inline-block; width: 15rem; margin-right:1.5rem">
+                                <!--? floor form-->
+                                <label style="display: inline-block;">Floor: </label>
+                                <select name="floor" id="floor" style="display: inline-block; width: 6rem">
+                                    <option value="1층">1층</option>
+                                    <option value="2층">2층</option>
+                                    <option value="3층">3층</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="gaurd_form_container"> <!--? second line <div>-->
+                            <!--? Date form-->
+                            <label style="margin-bottom:0rem;">Date: </label>
+                            <input type="text" name="date" value="<%= new Date().toLocaleDateString() %>" style="width: 10rem; display: inline-block; margin-right:3.5rem">
+                            <!--? Time form -->
+                            <label style="margin-bottom:0rem;">Time: </label>
+                            <input type="text" name="time" value="<%= new Date().toLocaleTimeString() %>" style="width: 10rem; display: inline-block; margin-bottom:1rem">
+                        </div>
+                        <!--? Gaurd Start - submit button -->
+                        <div class="button_container">
+                            <button type="submit">Start Gaurd</button>
+                        </div>
+                    </form> 
+                </article>
+
+                <!--* Query -->
+                <article id="query">
+                    <h2 class="major">Query</h2>
+                    <!--? Query Table - Post form-->
+                    <form action="/query_process" method="POST">
+                        <!--? Query Table-->
+                        <div class="table-wrapper">
+                            <table>
+
+                                <!--? Query Table - header -->
+                                <thead>
+                                    <tr>
+                                        <th id="checkbox_header"></th> <!--* radio box header-->
+                                        <th id="number_header">No.</th>
+                                        <th id="name_header">name</th>
+                                        <th id="floor_header">floor</th>
+                                        <th id="date_header">Date</th>
+                                        <th id="time_header">Time</th>
+                                    </tr>
+                                </thead>
+
+                                <!--? Query Table - tbody -->
+                                <tbody>
+                                    <% table_data.forEach(function(item, index) { %>
+                                        <tr>
+                                            <td class="td_text_align">
+                                                <input type="radio" id="<%= item.id %>" name="query_select" value="<%= item.id %>">
+                                                <label class="checkbox_pos_container" for="<%= item.id %>">
+                                                </label>
+                                            </td>
+                                            <td class="td_text_align"><%= item.id %> </td>
+                                            <td class="td_text_align"><%= item.name %> </td>
+                                            <td class="td_text_align"><%= item.floor %> </td>
+                                            <td class="td_text_align"><%= item.date %> </td>
+                                            <td class="td_text_align"><%= item.time %> </td>
+                                        </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        </div><br>
+
+                        <!--? Query Table - submit button -->
+                        <div class="button_container">
+                            <button type="submit">Inquire</button>
+                        </div>
+                    </form>
+                </article>
+
+
+                <!--* Inquire -->
+                <article id="inquire">
+                    <h2 class="major">Inquire</h2>
+                    <!--? select_data 존재하는가?-->
+                    <% if (!select_data || (select_data.id === null && select_data.floor === null && select_data.name === null && select_data.date === null && select_data.time === null)) { %>
+                        <p class="my-box-font">Data is not available.</p>
+                    <% } else {%> 
+
+                        <!--? Query Inquire 화면-->
+                        <!--? select data info-->
+                        <div class="flex-container">
+                            <div class="my-box">
+                                <p class="my-box-font">
+                                    <strong style="color:black;">Name:</strong><%= select_data.name %>
+                                </p>
+                            </div>
+                            <div class="info-container">
+                                <p class="info-p">
+                                    <strong>floor: </strong><%= select_data.floor %>
+                                </p>
+                                <p class="info-p" style="width:7rem;">
+                                    <strong>date: </strong><%= select_data.date %>
+                                </p>
+                                <p class="info-p" style="width:7rem;">
+                                    <strong>time: </strong><%= select_data.time %>
+                                </p>
+                            </div>
+                        </div><br>
+                    <% } %>
+
+                    <!--? select data - picture-->
+                    <% if (fileArray && fileArray.length > 0) { %>
+                        <% for (let i = 0; i < fileArray.length; i += 4) { %>
+                            <div class="grade-container">
+                                <div id="right_grade_box">
+                                    <div class="grade-box">
+                                        <div class="flex-container">
+                                            <img src="<%= fileArray[i] %>">
+                                            <img src="<%= fileArray[i + 1] %>">
+                                        </div>
+                                    </div>
+                                    <div class="class_name" style="margin-top: 0.3rem;">
+                                        <h3 style="color: white; margin-bottom: 0rem;"><%= i / 4 + 1 %>학년 1반 </h3>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="right_grade_box">
+                                        <div class="grade-box">
+                                            <div class="flex-container">
+                                                <img src="<%= fileArray[i + 2] %>" >
+                                                <img src="<%= fileArray[i + 3] %>">
+                                            </div>
+                                        </div>
+                                        <div class="class_name" style="margin-top: 0.3rem;">
+                                            <h3 style="color: white; margin-bottom: 0rem;"><%= i / 4 + 1 %>학년 2반 </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                        <% } %>
+                    <% } else { %>
+                        <p class="my-box-font">No data found.</p>
+                    <% } %>
+                </article>
+
+
+                <!--* maker -->
+                <article id="maker">
+                    <h2 class="major">Maker</h2>
+                    <h3 class="h3_maker_goup">Geekble</h3>
+                    <div class="maker_group" style="display: flex;">
+                        <div class="maker_geekble">
+                            <div class="geekble_image">
+                                <img src="images/모루.jpg" alt="모루" class="maker_img">
+                            </div>
+                            <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">MORU|</h3><h5 style="margin-bottom: 0rem; display: inline-block;">PD</h5><br>
+                                <ul>
+                                    <li>2023 미산고 프로젝트 PD</li>
+                                    <li>만드는것에 대한 즐거움!</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="maker_geekble">
+                            <div class="geekble_image">
+                                <img src="images/잭키.jpg" alt="잭키" class="maker_img">
+                            </div>
+                            <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">Jacky|</h3><h5 style="margin-bottom: 0rem; display: inline-block;">Maker</h5><br>
+                                <ul>
+                                    <li>2023 긱블 프로젝트 MAKER</li>
+                                    <li>만드는것에 대한 즐거움</li>
+                                    <li>GLaDOS 설계 지도</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><hr style="margin-top: 1.6rem; margin-bottom: 1.6rem;">
+                    <h3 style="letter-spacing: 0.1rem; color: #0ae5b1; padding-left: 0.5rem; border-left:solid 3.5px #ffffff; width: max-content;">메이커창작과 Makers</h3>
+                    <div class="maker_group">
+                        <div class="maker_student">
+                            <div class="person_image" style="display: inline-block; margin-right: 0.8rem;">
+                                <img src="images/조윤혁.JPG" alt="조윤혁" class="maker_img">
+                            </div>
+                            <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                <div style="border-bottom: solid 0.3px rgb(121, 121, 121); margin-bottom: 0.5rem; padding-bottom: 0.3rem;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">조윤혁 |</h3><h4 style="margin-bottom: 0rem; display: inline-block;">Project Leader</h4>
+                                </div>
+                                <h4 style="margin-bottom: 0.3rem;">SW전자팀 | GLaDOS 회로 제작, 동작 제어</h5>
+                                <ul>
+                                    <li>VEX Robotics 2019-2022 국가대표(4등)</li>
+                                    <li>잘생김</li>
+                                </ul>
+                            </div>
+                        </div><br>
+                        <div class="maker_student">
+                            <div class="person_image" style="display: inline-block; margin-right: 0.8rem;">
+                                <img src="images/장한수.JPG" alt="장한수" class="maker_img">
+                            </div>
+                            <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                <div style="border-bottom: solid 0.3px rgb(121, 121, 121); margin-bottom: 0.5rem; padding-bottom: 0.3rem;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">장한수 |</h3><h4 style="margin-bottom: 0rem; display: inline-block;">Mechanical Designer</h4>
+                                </div>
+                                <h4 style="margin-bottom: 0.3rem;">3D설계팀 | GLaDOS 기계공학 설계</h5>
+                                <ul>
+                                    <li>KBS 얼리어잡터 “설계자”</li>
+                                </ul>
+                            </div>
+                        </div><br>
+                        <div class="maker_student">
+                            <div class="person_image" style="display: inline-block; margin-right: 0.8rem;">
+                                <img src="images/김강현.JPG" alt="김강현" class="maker_img">
+                            </div>
+                            <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                <div style="border-bottom: solid 0.3px rgb(121, 121, 121); margin-bottom: 0.5rem; padding-bottom: 0.3rem;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">김강현 |</h3><h4 style="margin-bottom: 0rem; display: inline-block;">AI.Website Developer</h4>
+                                </div>
+                                <h4 style="margin-bottom: 0.3rem;">개발팀 | GLaDOS AI & WEB 사이트 제작</h5>
+                                <ul>
+                                    <li>LG CNS AIJA 본선 </li>
+                                </ul>
+                            </div>
+                        </div><br>
+                        <div class="maker_student">
+                            <div class="person_image" style="display: inline-block; margin-right: 0.8rem;">
+                                <img src="images/김선우.JPG" alt="김선우" class="maker_img">
+                            </div>
+                            <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                <div style="border-bottom: solid 0.3px rgb(121, 121, 121); margin-bottom: 0.5rem; padding-bottom: 0.3rem;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">김선우 |</h3><h4 style="margin-bottom: 0rem; display: inline-block;">Exterior designer</h4>
+                                </div>
+                                <h4 style="margin-bottom: 0.3rem;">3D설계팀 | GLaDOS 외관 설계 , 후가공</h5>
+                                <ul>
+                                    <li>가구 제작 개쩔어😍</li>
+                                </ul>
+                            </div>
+                        </div><br>
+                        <div>
+                            <div class="person_image" style="display: inline-block; margin-right: 0.8rem;">
+                                <img src="images/송승현.JPG" alt="장한수" class="maker_img">
+                            </div>
+                            <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                <div style="border-bottom: solid 0.3px rgb(121, 121, 121); margin-bottom: 0.5rem; padding-bottom: 0.3rem;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">송승현 |</h3><h4 style="margin-bottom: 0rem; display: inline-block;">Circuit Builder</h4>
+                                </div>
+                                <h4 style="margin-bottom: 0.3rem;">SW전자팀 | GLaDOS 회로 제작 , 통신 제어</h5>
+                                <ul>
+                                    <li>2022 YIP 발명진흥회장상</li>
+                                </ul>
+                            </div>
+                        </div><br>
+                    </div><hr style="margin-top: 1.6rem; margin-bottom: 1.6rem;">
+
+                    <h3 class="h3_maker_goup">메이커창작과 Teacher</h3>
+                    <div class="maker_group">
+                        <div class="T-group">
+                            <div class="maker_person_right">
+                                <div class="person_image" style="display: inline-block; border-radius: 50%; overflow: hidden; margin-right: 0.8rem;">
+                                    <img src="images/김영호.JPG" alt="김영호" class="maker_img">
+                                </div>
+                                <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">김영호|</h3><h5 style="margin-bottom: 0rem; display: inline-block;">3D킬러T</h5><br>
+                                    <ul>
+                                        <li>메이커창작과 학과장</li>
+                                        <li>3D프린터 전문 교사</li>
+                                        <li>3D프린터운용기능사 합격 지도</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="maker_person_left" >
+                                <div class="person_image" style="display: inline-block; border-radius: 50%; overflow: hidden; margin-right: 0.8rem;">
+                                    <img src="images/송대현.JPG" alt="송대현" class="maker_img">
+                                </div>
+                                <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">송대현|</h3><h5 style="margin-bottom: 0rem; display: inline-block;">코딩머신T</h5><br>
+                                    <ul>
+                                        <li>메이커창작과 프로그래밍 교사</li>
+                                        <li>정보처리기능사 지도 교사</li>
+                                        <li>전 LG, Samsung 연구원</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="T-group">
+                            <div class="maker_person_right">
+                                <div class="person_image" style="display: inline-block; border-radius: 50%; overflow: hidden; margin-right: 0.8rem;">
+                                    <img src="images/이우제.JPG" alt="이우제" class="maker_img">
+                                </div>
+                                <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">이우제|</h3><h5 style="margin-bottom: 0rem; display: inline-block;">전자돌이T</h5><br>
+                                    <ul>
+                                        <li>메이커창작과 전자 교사</li>
+                                        <li>네트워크 운용기능사 지도교사</li>
+                                        <li>제5회 KCF본선 지도 교사</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="maker_person_left" >
+                                <div class="person_image" style="display: inline-block; border-radius: 50%; overflow: hidden; margin-right: 0.8rem;">
+                                    <img src="images/최동규.JPG" alt="이우제" class="maker_img">
+                                </div>
+                                <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">최동규|</h3><h5 style="margin-bottom: 0rem; display: inline-block;">땜 몬스터T</h5><br>
+                                    <ul>
+                                        <li> 메이커창작과 전자 교사</li>
+                                        <li style="font-size: 19px;">LG CNS Genius Academy 지도교사</li>
+                                        <li>창의 아이디어 동상 지도교사</li>
+                                    </ul>
+                                </div>
+                            </div><br>
+                        </div><br>
+                        <div class="T-group">
+                            <div class="maker_person_right">
+                                <div class="person_image" style="display: inline-block; border-radius: 50%; overflow: hidden; margin-right: 0.8rem;">
+                                    <img src="images/박성범2.PNG" alt="박성범" class="maker_img">
+                                </div>
+                                <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">박성범</h3><h5 style="margin-bottom: 0rem; display: inline-block;">수학귀신T</h5><br>
+                                    <ul>
+                                        <li> 메이커창작과 정보처리수학 교사</li>
+                                        <li>특성화고 대학 보내드립니다!</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="maker_person_right">
+                                <div class="person_image" style="display: inline-block; border-radius: 50%; overflow: hidden; margin-right: 0.8rem;">
+                                    <img src="images/서명국.JPG" alt="서명국" class="maker_img">
+                                </div>
+                                <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">서명국</h3><h5 style="margin-bottom: 0rem; display: inline-block;">통신.하드웨어T</h5><br>
+                                    <ul>
+                                        <li style="font-size: 18px"> 메이커창작과 통신.하드웨어 교사</li>
+                                        <li>전자 회로 전문</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="T-group">
+                            <div class="maker_person_right">
+                                <div class="person_image" style="display: inline-block; border-radius: 50%; overflow: hidden; margin-right: 0.8rem;">
+                                    <img src="images/장동환.JPG" alt="장동환" class="maker_img">
+                                </div>
+                                <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">장동환</h3><h5 style="margin-bottom: 0rem; display: inline-block;">소형무인기T</h5><br>
+                                    <ul>
+                                        <li style="font-size: 19px;">메이커창작과 소형무인기 교사</li>
+                                        <li style="font-size: 19px;">초경량비행장치조종자 1종 합격 지도</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="maker_person_left" >
+                                <div class="person_image" style="display: inline-block; border-radius: 50%; overflow: hidden; margin-right: 0.8rem;">
+                                    <img src="images/김봉근.JPG" alt="김봉근" class="maker_img">
+                                </div>
+                                <div class="person_career" style="display: inline-block; vertical-align: top;">
+                                    <h3 style="margin-bottom: 0rem; display: inline-block; margin-right: 0.5rem;">김봉근</h3><h5 style="margin-bottom: 0rem; display: inline-block;">소형무인기T</h5><br>
+                                    <ul>
+                                        <li style="font-size: 19px;">메이커창작과 소형무인기 교사</li>
+                                        <li style="font-size: 19px;">초경량비행장치조종자 1종 합격 지도</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+                <!-- Elements -->
+                <article id="elements">
+                    <h2 class="major">Elements</h2>
+                    <section>
+                        <h3 class="major">Text</h3>
+                        <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>. This is <sup>superscript</sup> text and this is <sub>subscript</sub> text. This is <u>underlined</u> and this is code: <code>for (;;) {...}</code>. Finally, <a href="#">this is a link</a>. </p>
+                        <hr />
+                        <h2>Heading Level 2</h2>
+                        <h3>Heading Level 3</h3>
+                        <h4>Heading Level 4</h4>
+                        <h5>Heading Level 5</h5>
+                        <h6>Heading Level 6</h6>
+                        <hr />
+                        <h4>Blockquote</h4>
+                        <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+                        <h4>Preformatted</h4>
+                        <pre>
+																		<code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code>
+																	</pre>
+                    </section>
+                    <section>
+                        <h3 class="major">Lists</h3>
+                        <h4>Unordered</h4>
+                        <ul>
+                            <li>Dolor pulvinar etiam.</li>
+                            <li>Sagittis adipiscing.</li>
+                            <li>Felis enim feugiat.</li>
+                        </ul>
+                        <h4>Alternate</h4>
+                        <ul class="alt">
+                            <li>Dolor pulvinar etiam.</li>
+                            <li>Sagittis adipiscing.</li>
+                            <li>Felis enim feugiat.</li>
+                        </ul>
+                        <h4>Ordered</h4>
+                        <ol>
+                            <li>Dolor pulvinar etiam.</li>
+                            <li>Etiam vel felis viverra.</li>
+                            <li>Felis enim feugiat.</li>
+                            <li>Dolor pulvinar etiam.</li>
+                            <li>Etiam vel felis lorem.</li>
+                            <li>Felis enim et feugiat.</li>
+                        </ol>
+                        <h4>Icons</h4>
+                        <ul class="icons">
+                            <li>
+                                <a href="#" class="icon brands fa-twitter">
+                                    <span class="label">Twitter</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon brands fa-facebook-f">
+                                    <span class="label">Facebook</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon brands fa-instagram">
+                                    <span class="label">Instagram</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon brands fa-github">
+                                    <span class="label">Github</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <h4>Actions</h4>
+                        <ul class="actions">
+                            <li>
+                                <a href="#" class="button primary">Default</a>
+                            </li>
+                            <li>
+                                <a href="#" class="button">Default</a>
+                            </li>
+                        </ul>
+                        <ul class="actions stacked">
+                            <li>
+                                <a href="#" class="button primary">Default</a>
+                            </li>
+                            <li>
+                                <a href="#" class="button">Default</a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="major">Table</h3>
+                        <h4>Default</h4>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Item One</td>
+                                        <td>Ante turpis integer aliquet porttitor.</td>
+                                        <td>29.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Item Two</td>
+                                        <td>Vis ac commodo adipiscing arcu aliquet.</td>
+                                        <td>19.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Item Three</td>
+                                        <td> Morbi faucibus arcu accumsan lorem.</td>
+                                        <td>29.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Item Four</td>
+                                        <td>Vitae integer tempus condimentum.</td>
+                                        <td>19.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Item Five</td>
+                                        <td>Ante turpis integer aliquet porttitor.</td>
+                                        <td>29.99</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="2"></td>
+                                        <td>100.00</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <h4>Alternate</h4>
+                        <div class="table-wrapper">
+                            <table class="alt">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Item One</td>
+                                        <td>Ante turpis integer aliquet porttitor.</td>
+                                        <td>29.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Item Two</td>
+                                        <td>Vis ac commodo adipiscing arcu aliquet.</td>
+                                        <td>19.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Item Three</td>
+                                        <td> Morbi faucibus arcu accumsan lorem.</td>
+                                        <td>29.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Item Four</td>
+                                        <td>Vitae integer tempus condimentum.</td>
+                                        <td>19.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Item Five</td>
+                                        <td>Ante turpis integer aliquet porttitor.</td>
+                                        <td>29.99</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="2"></td>
+                                        <td>100.00</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </section>
+                    <section>
+                        <h3 class="major">Buttons</h3>
+                        <ul class="actions">
+                            <li>
+                                <a href="#" class="button primary">Primary</a>
+                            </li>
+                            <li>
+                                <a href="#" class="button">Default</a>
+                            </li>
+                        </ul>
+                        <ul class="actions">
+                            <li>
+                                <a href="#" class="button">Default</a>
+                            </li>
+                            <li>
+                                <a href="#" class="button small">Small</a>
+                            </li>
+                        </ul>
+                        <ul class="actions">
+                            <li>
+                                <a href="#" class="button primary icon solid fa-download">Icon</a>
+                            </li>
+                            <li>
+                                <a href="#" class="button icon solid fa-download">Icon</a>
+                            </li>
+                        </ul>
+                        <ul class="actions">
+                            <li>
+                                <span class="button primary disabled">Disabled</span>
+                            </li>
+                            <li>
+                                <span class="button disabled">Disabled</span>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3 class="major">Form</h3>
+                        <form method="post" action="#">
+                            <div class="fields">
+                                <div class="field half">
+                                    <label for="demo-name">Name</label>
+                                    <input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+                                </div>
+                                <div class="field half">
+                                    <label for="demo-email">Email</label>
+                                    <input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+                                </div>
+                                <div class="field">
+                                    <label for="demo-category">Category</label>
+                                    <select name="demo-category" id="demo-category">
+                                        <option value="">-</option>
+                                        <option value="1">Manufacturing</option>
+                                        <option value="1">Shipping</option>
+                                        <option value="1">Administration</option>
+                                        <option value="1">Human Resources</option>
+                                    </select>
+                                </div>
+                                <div class="field half">
+                                    <input type="radio" id="demo-priority-low" name="demo-priority" checked>
+                                    <label for="demo-priority-low">Low</label>
+                                </div>
+                                <div class="field half">
+                                    <input type="radio" id="demo-priority-high" name="demo-priority">
+                                    <label for="demo-priority-high">High</label>
+                                </div>
+                                <div class="field half">
+                                    <input type="checkbox" id="demo-copy" name="demo-copy">
+                                    <label for="demo-copy">Email me a copy</label>
+                                </div>
+                                <div class="field half">
+                                    <input type="checkbox" id="demo-human" name="demo-human" checked>
+                                    <label for="demo-human">Not a robot</label>
+                                </div>
+                                <div class="field">
+                                    <label for="demo-message">Message</label>
+                                    <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+                                </div>
+                            </div>
+                            <ul class="actions">
+                                <li>
+                                    <input type="submit" value="Send Message" class="primary" />
+                                </li>
+                                <li>
+                                    <input type="reset" value="Reset" />
+                                </li>
+                            </ul>
+                        </form>
+                    </section>
+                </article>
+            </div>
+            <!-- Footer -->
+            <footer id="footer">
+                <p class="copyright">&copy; Po-glos. Make by: <a href="https://cafe.naver.com/samddeng/">메이커창작과</a>X <a href="https://www.youtube.com/@geekble" style="color: #0ae5b1">Geekble</a>
+                </p>
+            </footer>
+        </div>
+        <!-- BG -->
+        <div id="bg"></div>
+        <!-- Scripts -->
+        <script src="javascripts/jquery.min.js"></script>
+        <script src="javascripts/browser.min.js"></script>
+        <script src="javascripts/breakpoints.min.js"></script>
+        <script src="javascripts/util.js"></script>
+        <script src="javascripts/main.js"></script>
+    </body>
+</html>
