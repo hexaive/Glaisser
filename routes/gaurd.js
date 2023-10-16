@@ -48,18 +48,18 @@ router.get('/', function(req, res, next) {
           console.log('폴더가 성공적으로 만들어졌습니다.');
           // 복사할 파일 경로와 대상 파일 경로를 배열로 정의합니다.
           const filePairs = [
-            { source: './public/data/new/1011.JPG', destination: `./public/data/id_${select_data.id}/1011.JPG` },
-            { source: './public/data/new/1012.JPG', destination: `./public/data/id_${select_data.id}/1012.JPG` },
-            { source: './public/data/new/1021.JPG', destination: `./public/data/id_${select_data.id}/1021.JPG` },
-            { source: './public/data/new/1022.JPG', destination: `./public/data/id_${select_data.id}/1022.JPG` },
-            { source: './public/data/new/2011.JPG', destination: `./public/data/id_${select_data.id}/2011.JPG` },
-            { source: './public/data/new/2012.JPG', destination: `./public/data/id_${select_data.id}/2012.JPG` },
-            { source: './public/data/new/2021.JPG', destination: `./public/data/id_${select_data.id}/2021.JPG` },
-            { source: './public/data/new/2022.JPG', destination: `./public/data/id_${select_data.id}/2022.JPG` },
-            { source: './public/data/new/3011.JPG', destination: `./public/data/id_${select_data.id}/3011.JPG` },
-            { source: './public/data/new/3012.JPG', destination: `./public/data/id_${select_data.id}/3012.JPG` },
-            { source: './public/data/new/3021.JPG', destination: `./public/data/id_${select_data.id}/3021.JPG` },
-            { source: './public/data/new/3022.JPG', destination: `./public/data/id_${select_data.id}/3022.JPG` },
+            { source: './public/data/new/1011.jpg', destination: `./public/data/id_${select_data.id}/1011.JPG` },
+            { source: './public/data/new/1012.jpg', destination: `./public/data/id_${select_data.id}/1012.JPG` },
+            { source: './public/data/new/1021.jpg', destination: `./public/data/id_${select_data.id}/1021.JPG` },
+            { source: './public/data/new/1022.jpg', destination: `./public/data/id_${select_data.id}/1022.JPG` },
+            { source: './public/data/new/2011.jpg', destination: `./public/data/id_${select_data.id}/2011.JPG` },
+            { source: './public/data/new/2012.jpg', destination: `./public/data/id_${select_data.id}/2012.JPG` },
+            { source: './public/data/new/2021.jpg', destination: `./public/data/id_${select_data.id}/2021.JPG` },
+            { source: './public/data/new/2022.jpg', destination: `./public/data/id_${select_data.id}/2022.JPG` },
+            { source: './public/data/new/3011.jpg', destination: `./public/data/id_${select_data.id}/3011.JPG` },
+            { source: './public/data/new/3012.jpg', destination: `./public/data/id_${select_data.id}/3012.JPG` },
+            { source: './public/data/new/3021.jpg', destination: `./public/data/id_${select_data.id}/3021.JPG` },
+            { source: './public/data/new/3022.jpg', destination: `./public/data/id_${select_data.id}/3022.JPG` },
           ];
 
           // 각 파일을 복사하고 붙여넣기를 비동기적으로 수행합니다.

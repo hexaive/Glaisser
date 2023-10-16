@@ -8,6 +8,7 @@ const { spawn, exec } = require('child_process');
 router.get('/:id/:imagename', function(req, res, next) {
     const imagename = req.params.imagename;
     const id = req.params.id;
+    console.log(imagename,id);
     const image = fs.readFileSync(`public/data/id_${id}/${imagename}.JPG`, {
         encoding: "base64"
     });
@@ -16,7 +17,7 @@ router.get('/:id/:imagename', function(req, res, next) {
         method: "POST",
         url: "https://detect.roboflow.com/person-wozrc/1",
         params: {
-            api_key: "px1uTQC3WV6c9...........................................................................................................................................................................JsQUO4L"
+            api_key: "px1uTQC3WV6c9JsQUO4L"
         },
         data: image,
         headers: {
@@ -27,7 +28,7 @@ router.get('/:id/:imagename', function(req, res, next) {
         res_message=""
         console.log(response.data);
         if (response.data.predictions.length>0){
-            res_message="recog_true"
+            recog_message="recog_true"
         }
         else if (response.data.predictions.length==0){
             recog_message="recog_false"
@@ -44,7 +45,7 @@ router.get('/:id/:imagename', function(req, res, next) {
                   return;
                 }
                 console.log(`Python 스크립트 출력: ${stdout}`);
-                res.status(200).send(recog_message)
+                res.status(200).send(recog_message);
               });
         }
         });

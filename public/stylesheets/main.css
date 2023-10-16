@@ -64,13 +64,17 @@ mark {
 input::-moz-focus-inner {
 	border: 0;
 	padding: 0;
-}
+}9
 
 input, select, textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
+}
+.intro_p{
+	margin-bottom: 0.3rem;
+	font-size: 1.15rem;
 }
 .flex-container {
 	display: flex;

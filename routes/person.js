@@ -2,7 +2,7 @@ const axios = require("axios");
 const fs = require("fs");
 const { spawn, exec } = require('child_process'); // child_process 모듈에서 exec 함수 가져오기
 
-const image = fs.readFileSync("../public/images/pic01.jpg", {
+const image = fs.readFileSync("../public/data/id_58/3022.JPG", {
     encoding: "base64"
 });
 

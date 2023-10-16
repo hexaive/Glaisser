@@ -44,7 +44,7 @@ router.post('/', async function(req, res, next) {
           }
           console.log(`Python 스크립트 출력: ${stdout}`);
         });
-        res.redirect("http://glassier.com:3000/gaurd");
+        res.redirect("http://po-glos.com:3000/gaurd");
       });
     } catch (jsonError) {
       console.error('JSON 데이터를 파싱하는 도중 오류가 발생했습니다.');
