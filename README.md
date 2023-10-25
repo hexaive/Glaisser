@@ -4,7 +4,7 @@ Date: 2023.8.25 ~ 2023.10.25<br>
 Youtube Upload Date: 2023.11.4<br>
 Youtube Link: []<br>
 
-<br><br><br>
+<br>
 **ToDO**: code&Data Loss<br>
 <ul>
   <li>Maker Page: 안채린 선생님 추가</li>
