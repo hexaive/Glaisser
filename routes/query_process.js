@@ -31,7 +31,7 @@ router.post('/', function(req, res, next) {
             console.error('파일을 쓸 수 없습니다:', err);
         } else {
             console.log('파일이 성공적으로 수정되었습니다.');
-            res.redirect("http://glassier.com:3000/#inquire");
+            res.redirect("http://po-glos.com:3000/#inquire");
         }
     });
     console.log("***query_process.js end  write file(inquire_data.json) & redirection***")

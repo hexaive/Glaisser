@@ -1,16 +1,16 @@
 {
-  "time": 0.05810392800003683,
+  "time": 0.04957209500025783,
   "image": {
     "width": 640,
     "height": 480
   },
   "predictions": [
     {
-      "x": 439,
-      "y": 244.5,
-      "width": 402,
-      "height": 469,
-      "confidence": 0.6144618988037109,
+      "x": 363,
+      "y": 338.5,
+      "width": 78,
+      "height": 201,
+      "confidence": 0.4364317059516907,
       "class": "0",
       "class_id": 0
     }
