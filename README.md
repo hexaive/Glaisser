@@ -3,3 +3,10 @@
 Date: 2023.8.25 ~ 2023.10.25<br>
 Youtube Upload Date: 2023.11.4<br>
 Youtube Link: []<br>
+
+<br><br><br>
+**ToDO**: code&Data Loss<br>
+<ul>
+  <li>Maker Page: 안채린 선생님 추가</li>
+  <li>층분리: 1층- 교실 5개(감소) 2층-사진 1개(image width:45px) 분리</li>
+</ul>
