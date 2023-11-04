@@ -3,11 +3,5 @@
 <video src="https://github.com/hyun0810d/2023_Geekble_Project-Glaisser/assets/84117112/fdaa14c3-3bab-4185-89e1-f17258067645"></video>
 Date: 2023.8.25 ~ 2023.10.25<br>
 Youtube Upload Date: 2023.11.4<br>
-Youtube Link: []<br>
-
-<br>
-**ToDO**: code&Data Loss<br>
-<ul>
-  <li>Maker Page: 안채린 선생님 추가</li>
-  <li>층분리: 1층- 교실 5개(감소) 2층-사진 1개(image width:45px) 분리</li>
-</ul>
+Youtube Link: [https://www.youtube.com/watch?v=lbPWybNbxP8]<br>
+<video src="https://www.youtube.com/watch?v=lbPWybNbxP8" alt="2023 긱블 프로젝트"></video>
