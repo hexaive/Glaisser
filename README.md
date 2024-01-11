@@ -1,11 +1,3 @@
-# 2023_Geekble_Project-Glaisser
-2023년 미래산업과학고등학교 메이커창작과 Geekble 프로젝트 - Portal 게임 시리즈의 시즌 2 보스 Glados를 이용한 학교 경비 로봇<br>
-<video src="https://github.com/hyun0810d/2023_Geekble_Project-Glaisser/assets/84117112/fdaa14c3-3bab-4185-89e1-f17258067645"></video>
-Date: 2023.8.25 ~ 2023.10.25<br>
-Youtube Upload Date: 2023.11.4<br>
-Youtube Link: [https://www.youtube.com/watch?v=lbPWybNbxP8]<br>
-WEB: [www.Glaisser.com]
-
 <!-----
 
 
@@ -26,11 +18,17 @@ Conversion notes:
 * Thu Jan 11 2024 04:07:34 GMT-0800 (PST)
 * Source doc: [2023 Geekble Project] Software 설명서
 ----->
-
+# 2023_Geekble_Project-Glaisser
+***2023년 미래산업과학고등학교 메이커창작과 Geekble 프로젝트 - Portal 게임 시리즈의 시즌 2 보스 Glados를 이용한 학교 경비 로봇***<br>
+<video src="https://github.com/hyun0810d/2023_Geekble_Project-Glaisser/assets/84117112/fdaa14c3-3bab-4185-89e1-f17258067645"></video>
+**Date**: 2023.8.25 ~ 2023.10.25<br>
+**Youtube Upload Date**: 2023.11.4<br>
+**Youtube Link**: [https://www.youtube.com/watch?v=lbPWybNbxP8]<br>
+**WEB**: [www.Glaisser.com🔗](www.Glaisser.com)<br>
 
 <h1>[2023 Geekble Project] Software 설명서</h1>
 
-**웹을 통한 글라도스 제어와 인공지능을 사용하여 사람인식을 하여 경비로봇을 만들고 이를 웹페이지를 통해 경비 결과를 보여준다.**
+><b>웹을 통한 글라도스 제어와 인공지능을 사용하여 사람인식을 하여 경비로봇을 만들고 이를 웹페이지를 통해 경비 결과를 보여준다.</b>
 
 **[AI]**
 
