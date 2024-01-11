@@ -4,7 +4,7 @@
 Date: 2023.8.25 ~ 2023.10.25<br>
 Youtube Upload Date: 2023.11.4<br>
 Youtube Link: [https://www.youtube.com/watch?v=lbPWybNbxP8]<br>
-<video src="https://www.youtube.com/watch?v=lbPWybNbxP8" alt="2023 긱블 프로젝트"></video>
+WEB: [www.Glaisser.com]
 
 <!-----
 
