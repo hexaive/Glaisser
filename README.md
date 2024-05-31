@@ -27,7 +27,7 @@ Conversion notes:
 **Youtube Link**: [https://www.youtube.com/watch?v=lbPWybNbxP8]<br>
 **WEB**: [www.Glaisser.com🔗](www.Glaisser.com)<br>
 
-<h1>[2023 Geekble Project] Software 설명서</h1>
+## Software 및 기술 설명
 
 ><b>웹을 통한 글라도스 제어와 인공지능을 사용하여 사람인식을 하여 경비로봇을 만들고 이를 웹페이지를 통해 경비 결과를 보여준다.</b>
 
