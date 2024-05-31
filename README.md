@@ -22,7 +22,12 @@ Conversion notes:
 >***2023년 미래산업과학고등학교 메이커창작과 Geekble 프로젝트 - Portal 게임 시리즈의 시즌 2 보스 Glados를 이용한 학교 경비 로봇***
 
 <video src="https://github.com/hyun0810d/2023_Geekble_Project-Glaisser/assets/84117112/fdaa14c3-3bab-4185-89e1-f17258067645"></video>
-**Date**: 2023.8.25 ~ 2023.10.25<br>
+**Team**: 미래산업과학고 메이커창작과 5인 X Geekble 잭키(feat. 나모, 수드래곤) /  PD: 모루<br>
+**Maker**: 김강현(AI & Web Dev), 조윤혁(Leader & Electronic), 송승현(Electronic), 장한수(Engeenioring), 김선우(Engeenioring)<br>
+**Production period**: 2023.9 ~ 2023.10<br>
+**Coverage Date**: 2023.11<br>
+**Engeenioring Files**: None<br
+**.etc**: 2023 Seoul Maker Fair & Science Festival 등 다양한 전시회에 전시<br><br>
 **Youtube Upload Date**: 2023.11.4<br>
 **Youtube Link**: [https://www.youtube.com/watch?v=lbPWybNbxP8]<br>
 **WEB**: [www.Glaisser.com🔗](www.Glaisser.com)<br>
