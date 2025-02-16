@@ -14,7 +14,7 @@
 
 **📺 Youtube Upload Date**: 2023.11.4  
 **🎥 Youtube Link**: [https://www.youtube.com/watch?v=lbPWybNbxP8](https://www.youtube.com/watch?v=lbPWybNbxP8)  
-**🌐 WEB**: [www.Glaisser.com🔗](www.Glaisser.com)
+**🌐 WEB**: [www.Glaisser.com🔗](www.Glaisser.com) (단, 현재는 운영 종료)
 
 ---
 
