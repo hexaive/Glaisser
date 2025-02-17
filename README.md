@@ -5,17 +5,39 @@
 
 <video src="https://github.com/hyun0810d/2023_Geekble_Project-Glaisser/assets/84117112/fdaa14c3-3bab-4185-89e1-f17258067645"></video>
 
-**🎬 Team**: 미래산업과학고 메이커창작과 5인 X Geekble 잭키(feat. 나모, 수드래곤) / PD: 모루  
-**💻 Maker**: 김강현(AI & Web Dev), 조윤혁(Leader & Electronic), 송승현(Electronic), 장한수(Engineering), 김선우(Engineering)  
-**🗓️ Production period**: 2023.9 ~ 2023.10  
-**📅 Coverage Date**: 2023.11  
-**📂 Engineering Files**: None  
-**🎨 .etc**: 2023 Seoul Maker Fair & Science Festival 등 다양한 전시회에 전시  
+## 🎞 Product Video
+🔗 [Watch here](https://youtube.com/shorts/zjXd_HjklBY?feature=share) 
 
-**📺 Youtube Upload Date**: 2023.11.4  
-**🎥 Youtube Link**: [https://www.youtube.com/watch?v=lbPWybNbxP8](https://www.youtube.com/watch?v=lbPWybNbxP8)  
-**🌐 WEB**: [www.Glaisser.com🔗](www.Glaisser.com) (단, 현재는 운영 종료)
+## ⚡ Team
+**미래산업과학고 메이커창작과 5인 X Geekble 잭키(feat. 나모, 수드래곤) / PD: 모루** ⚗
 
+## 🛠️ Maker
+김강현(AI & Web Dev), 조윤혁(Leader & Electronic), 송승현(Electronic), 장한수(Engineering), 김선우(Engineering) 
+
+## 📅 Production Period
+⏳ 2023.9 ~ 2023.10
+
+## 📂 Engineering Files
+📁 None
+
+<br>
+
+## 📺 Youtube Upload Date
+📆 2023.11.4
+
+## 🎥 Youtube Link
+🎞 [https://www.youtube.com/watch?v=lbPWybNbxP8](https://www.youtube.com/watch?v=lbPWybNbxP8)
+
+## 🌐 WEB
+🌐 [www.Glaisser.com🔗](www.Glaisser.com) (단, 현재는 운영 종료)
+
+---
+
+### 🏆 프로젝트 성과
+- ✅ **미래산업과학고 메이커창자과 대표 작품** 🎓
+- ✅ **2023 Seoul Maker Fair & Science Festival 등 다양한 전시회 참여 ** 💡
+- ✅ **첫 웹 개발 성공(개인)** 🎯
+  
 ---
 
 ## 💡 Software 및 기술 설명
