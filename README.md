@@ -8,7 +8,7 @@
 
 ## 🎞 Product Video
 
-🔗 [Watch here](https://youtube.com/shorts/zjXd_HjklBY?feature=share)
+🔗 [Watch here](https://youtu.be/JkVdGndak4U?si=aTk7zneOoaQ3WIBR)
 
 ## ✨ Key Features
 
